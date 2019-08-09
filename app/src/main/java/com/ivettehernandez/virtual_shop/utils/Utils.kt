@@ -1,4 +1,4 @@
-package com.ivettehernandez.virtual_shop
+package com.ivettehernandez.virtual_shop.utils
 
 
 /**
@@ -11,7 +11,9 @@ object Utils {
 
     const val login = "${url}api/signin"
     const val register = "${url}api/signup"
+    const val user = "${url}api/user/"
 
-    var token = ""
+    var token: String? = null
+    var _id: String? = "5d4c58087c3f1100045df6d6"
 
 }

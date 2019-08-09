@@ -4,15 +4,17 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.ivettehernandez.virtual_shop.DrawerActivity
 import com.ivettehernandez.virtual_shop.MainActivity
 import com.ivettehernandez.virtual_shop.R
-import com.ivettehernandez.virtual_shop.Utils
+import com.ivettehernandez.virtual_shop.utils.Utils
 import kotlinx.android.synthetic.main.activity_login.*
 import org.json.JSONObject
 
@@ -21,10 +23,11 @@ import org.json.JSONObject
  * Created by Ivette Hernández on 2019-08-07.
  */
 
+@Suppress("DEPRECATION")
 class LoginActivity : AppCompatActivity() {
 
-    var sharedPreferences: SharedPreferences? = null
-    var editor: SharedPreferences.Editor? = null
+    lateinit var preferences: SharedPreferences
+    lateinit var editor: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,13 +62,15 @@ class LoginActivity : AppCompatActivity() {
 
                         val jsonObject = JSONObject(response)
 
-                        editor = sharedPreferences?.edit()
-                        editor?.putString("token", jsonObject.getString("token"))
-                        editor?.apply()
+                        Log.e("Token", jsonObject.getString("token"))
 
-                        Utils.token = jsonObject.getString("token")
+                        preferences = PreferenceManager.getDefaultSharedPreferences(this@LoginActivity)
+                        editor = preferences.edit()
 
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        editor.putString("token", jsonObject.getString("token"))
+                        editor.apply()
+
+                        val intent = Intent(this@LoginActivity, DrawerActivity::class.java)
                         startActivity(intent)
                         finish()
 

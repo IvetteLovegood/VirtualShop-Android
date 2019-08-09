@@ -9,9 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.ivettehernandez.virtual_shop.DrawerActivity
 import com.ivettehernandez.virtual_shop.MainActivity
 import com.ivettehernandez.virtual_shop.R
-import com.ivettehernandez.virtual_shop.Utils
+import com.ivettehernandez.virtual_shop.utils.Utils
 import kotlinx.android.synthetic.main.activity_register.*
 import org.json.JSONObject
 
@@ -59,7 +60,7 @@ class RegisterActivity : AppCompatActivity() {
 
                         Utils.token = jsonObject.getString("token")
 
-                        val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                        val intent = Intent(this@RegisterActivity, DrawerActivity::class.java)
                         startActivity(intent)
                         finish()
 
