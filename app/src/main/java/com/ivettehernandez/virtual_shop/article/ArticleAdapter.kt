@@ -1,5 +1,6 @@
 package com.ivettehernandez.virtual_shop.article
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.util.Base64
 import android.view.LayoutInflater
@@ -51,11 +52,11 @@ class ArticleAdapter(val recyclerList: List<Article>) : RecyclerView.Adapter<Art
                 articleImage.setImageBitmap(decodedByte)
             }
 
-        //    view.setOnClickListener{
-        //        val intent = Intent(view.rootView.context, StockListDetail::class.java)
-        //        intent.putExtra("productId", recyclerItemText.productId)
-         //       view.context.startActivity(intent)
-          //  }
+            view.setOnClickListener{
+                val intent = Intent(view.rootView.context, ArticleDetail::class.java)
+                intent.putExtra("_id", recyclerItemText._id)
+                view.context.startActivity(intent)
+            }
         }
     }
 }

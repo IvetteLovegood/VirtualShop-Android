@@ -47,11 +47,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'com.android.support:multidex:1.0.3'
-
-
-    compile 'com.android.support:recyclerview-v7:+'
-    compile 'com.android.support:cardview-v7:+'
-
+    implementation 'io.vrinda.kotlinpermissions:kotlinpermissions:1.1'
 
 
 }

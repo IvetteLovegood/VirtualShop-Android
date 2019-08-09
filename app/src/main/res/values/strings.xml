@@ -13,19 +13,28 @@
     <string name="title_activity_drawer">DrawerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="select">Seleccionar</string>
+    <string name="galeria">Galería</string>
+    <string name="camara">Cámara</string>
     <string name="title_article">Artículos</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome">Bienvenido</string>
+    <string name="article_menu">Articulos</string>
+    <string name="add_article_menu">Agregar articulo</string>
+    <string name="take_photo_article">Toma una foto del articulo</string>
+    <string name="article_modify">Modificar</string>
+    <string name="article_delete">Eliminar</string>
+    <string name="title_activity_article_modify">ArticleModify</string>
+    <string name="article_detail">Detalle</string>
+    <string name="modificar_nuevo_articulo">Modificar Articulo</string>
+    <string name="session">Sesión</string>
+    <string name="log_out">Cerrar Sesión</string>
+    <string name="articulos">Articulos</string>
+    <string name="my_profile">Mi Perfil</string>
+    <string name="mi_perfil">Mi Perfil</string>
+    <string name="delete_profile">Eliminar Perfil</string>
+    <string name="modify_profile">Modificar Perfil</string>
 </resources>

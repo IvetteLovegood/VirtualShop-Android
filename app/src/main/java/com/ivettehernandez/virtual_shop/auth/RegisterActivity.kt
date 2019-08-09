@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Response
@@ -20,12 +21,11 @@ import org.json.JSONObject
 /**
  * Created by Ivette Hernández on 2019-08-07.
  */
-
+@Suppress("DEPRECATION")
 class RegisterActivity : AppCompatActivity() {
 
-
-    var sharedPreferences: SharedPreferences? = null
-    var editor: SharedPreferences.Editor? = null
+    lateinit var preferences: SharedPreferences
+    lateinit var editor: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,14 +55,14 @@ class RegisterActivity : AppCompatActivity() {
                     if (!response.isEmpty()) {
 
                         val userobject = jsonObject.getJSONObject("user")
-                        
-                        editor = sharedPreferences?.edit()
-                        editor?.putString("token", jsonObject.getString("token"))
-                        editor?.putString("_id", userobject.getString("_id"))
-                        editor?.putString("email", userobject.getString("email"))
-                        editor?.apply()
 
-                        Utils.token = jsonObject.getString("token")
+                        preferences = PreferenceManager.getDefaultSharedPreferences(this@RegisterActivity)
+                        editor = preferences.edit()
+
+                        editor.putString("token", jsonObject.getString("token"))
+                        editor.putString("_id", userobject.getString("_id"))
+                        editor.putString("email", userobject.getString("email"))
+                        editor.apply()
 
                         val intent = Intent(this@RegisterActivity, DrawerActivity::class.java)
                         startActivity(intent)

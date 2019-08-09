@@ -30,6 +30,8 @@ class MainEmptyActivity : AppCompatActivity() {
         Utils.email = emailUser
 
 
+        Log.e("email", Utils.email)
+
          val activityIntent: Intent = when {
            !Utils.token.isNullOrEmpty() -> Intent(this, DrawerActivity::class.java)
              else -> Intent(this, LoginActivity::class.java)

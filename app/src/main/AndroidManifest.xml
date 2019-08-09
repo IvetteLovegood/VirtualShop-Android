@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.ivettehernandez.virtual_shop">
-
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.IMAGE_CAPTURE"/>
 
     <application
             android:allowBackup="true"
@@ -15,6 +16,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity
+                android:name=".article.ArticleModify"
+                android:label="@string/title_activity_article_modify"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
                 android:name=".DrawerActivity"
                 android:label="@string/title_activity_drawer"
@@ -34,6 +40,8 @@
         </activity>
         <activity android:name=".auth.RegisterActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".article.ArticleDetail"/>
+        <activity android:name=".user.UserDetail"/>
     </application>
 
 </manifest>

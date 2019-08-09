@@ -3,25 +3,34 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:showIn="navigation_view">
 
-    <item android:title="Articulos">
+    <item android:title="@string/my_profile">
         <menu>
             <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_share"
-                    android:title="Articulos"/>
-            <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_send"
-                    android:title="Agregar articulo"/>
+                    android:id="@+id/nav_user_detail"
+                    android:icon="@drawable/ic_mood_black_24dp"
+                    android:title="@string/mi_perfil"/>
         </menu>
     </item>
 
-    <item android:title="Sesión">
+    <item android:title="@string/articulos">
+        <menu>
+            <item
+                    android:id="@+id/nav_article_list"
+                    android:icon="@drawable/ic_view_list_black_24dp"
+                    android:title="@string/article_menu"/>
+            <item
+                    android:id="@+id/nav_add_article"
+                    android:icon="@drawable/ic_library_add_black_24dp"
+                    android:title="@string/add_article_menu"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/session">
         <menu>
             <item
                     android:id="@+id/log_out"
                     android:icon="@drawable/ic_menu_share"
-                    android:title="Cerrar Sesión"/>
+                    android:title="@string/log_out"/>
 
         </menu>
     </item>

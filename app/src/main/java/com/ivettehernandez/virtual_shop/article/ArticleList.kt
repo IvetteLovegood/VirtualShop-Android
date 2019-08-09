@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -33,13 +34,13 @@ class ArticleList : Fragment() {
         val dataList = mutableListOf<Article>()
         val layoutManager = LinearLayoutManager(this.requireContext())
 
-
-
         val queue = Volley.newRequestQueue(this.requireContext())
         val urlArticle = Utils.article
 
         val preferences = PreferenceManager.getDefaultSharedPreferences(this.requireContext())
         val tokenUser = preferences.getString("token", "")
+
+        showToast("Loading")
 
         val getRequest = @SuppressLint("CommitPrefEdits")
         object : StringRequest(
@@ -92,6 +93,7 @@ class ArticleList : Fragment() {
     }
 
 
+    fun showToast(message: String) = Toast.makeText(this.requireContext(), message, Toast.LENGTH_LONG).show()
 
 
     override fun onAttach(context: Context) {

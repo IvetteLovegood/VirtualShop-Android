@@ -18,5 +18,6 @@ object Utils {
     var token: String? = null
     var _id: String? = null
     var email: String? = null
+    var articleId: String? = null
 
 }
