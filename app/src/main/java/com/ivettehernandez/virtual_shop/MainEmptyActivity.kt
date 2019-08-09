@@ -21,9 +21,14 @@ class MainEmptyActivity : AppCompatActivity() {
 
         val preferences = PreferenceManager.getDefaultSharedPreferences(this@MainEmptyActivity)
 
-        val token_user = preferences.getString("token", "")
+        val tokenUser = preferences.getString("token", "")
+        val idUser = preferences.getString("_id", "")
+        val emailUser = preferences.getString("email", "")
 
-        Utils.token = token_user
+        Utils.token = tokenUser
+        Utils._id = idUser
+        Utils.email = emailUser
+
 
          val activityIntent: Intent = when {
            !Utils.token.isNullOrEmpty() -> Intent(this, DrawerActivity::class.java)

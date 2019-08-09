@@ -81,43 +81,12 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.drawer, menu)
 
-        val queue = Volley.newRequestQueue(this)
-        val url_user = user + Utils._id
-
         val preferences = PreferenceManager.getDefaultSharedPreferences(this@DrawerActivity)
-        val token_user = preferences.getString("token", "")
 
+        val emailUser = preferences.getString("email", "")
 
-        val getRequest = @SuppressLint("CommitPrefEdits")
-        object : StringRequest(
-            Method.GET, url_user,
-            Response.Listener { response ->
-                Log.d("Response", response)
-
-                if (!response.isEmpty()) {
-
-                    val jsonObject = JSONObject(response)
-
-                    val userObject = jsonObject.getJSONObject("user")
-
-                    val username: TextView = findViewById(R.id.name)
-                    username.text = userObject.getString("email")
-
-                }
-
-            },
-            Response.ErrorListener { response ->
-                Log.d("Error.Response", response.toString())
-            }
-        ) {
-            override fun getHeaders(): Map<String, String> {
-                val params = HashMap<String, String>()
-                params["Authorization"] = "Bearer $token_user"
-
-                return params
-            }
-        }
-        queue.add(getRequest)
+        val username: TextView = findViewById(R.id.name)
+        username.text = emailUser
 
         return true
     }

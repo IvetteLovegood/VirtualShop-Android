@@ -54,8 +54,12 @@ class RegisterActivity : AppCompatActivity() {
                     val jsonObject = JSONObject(response)
                     if (!response.isEmpty()) {
 
+                        val userobject = jsonObject.getJSONObject("user")
+                        
                         editor = sharedPreferences?.edit()
                         editor?.putString("token", jsonObject.getString("token"))
+                        editor?.putString("_id", userobject.getString("_id"))
+                        editor?.putString("email", userobject.getString("email"))
                         editor?.apply()
 
                         Utils.token = jsonObject.getString("token")

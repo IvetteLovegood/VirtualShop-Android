@@ -61,13 +61,17 @@ class LoginActivity : AppCompatActivity() {
                     if (!response.isEmpty()) {
 
                         val jsonObject = JSONObject(response)
+                        val userobject = jsonObject.getJSONObject("user")
 
-                        Log.e("Token", jsonObject.getString("token"))
+
+                        Log.e("userobject", userobject.toString())
 
                         preferences = PreferenceManager.getDefaultSharedPreferences(this@LoginActivity)
                         editor = preferences.edit()
 
                         editor.putString("token", jsonObject.getString("token"))
+                        editor.putString("_id", userobject.getString("_id"))
+                        editor.putString("email", userobject.getString("email"))
                         editor.apply()
 
                         val intent = Intent(this@LoginActivity, DrawerActivity::class.java)

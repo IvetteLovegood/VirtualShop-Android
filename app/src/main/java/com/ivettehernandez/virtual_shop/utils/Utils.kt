@@ -16,6 +16,7 @@ object Utils {
 
 
     var token: String? = null
-    var _id: String? = "5d4c58087c3f1100045df6d6"
+    var _id: String? = null
+    var email: String? = null
 
 }

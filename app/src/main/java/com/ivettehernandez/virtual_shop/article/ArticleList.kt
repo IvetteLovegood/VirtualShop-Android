@@ -21,6 +21,7 @@ import org.json.JSONObject
 import java.util.HashMap
 
 
+@Suppress("DEPRECATION")
 class ArticleList : Fragment() {
 
     private var listener: OnFragmentInteractionListener? = null
@@ -39,8 +40,6 @@ class ArticleList : Fragment() {
 
         val preferences = PreferenceManager.getDefaultSharedPreferences(this.requireContext())
         val tokenUser = preferences.getString("token", "")
-
-        Log.e("tokenUser", tokenUser)
 
         val getRequest = @SuppressLint("CommitPrefEdits")
         object : StringRequest(

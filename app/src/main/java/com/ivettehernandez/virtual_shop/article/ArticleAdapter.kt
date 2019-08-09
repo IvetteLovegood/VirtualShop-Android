@@ -40,7 +40,7 @@ class ArticleAdapter(val recyclerList: List<Article>) : RecyclerView.Adapter<Art
 
             articleName.text = recyclerItemText.nombre
             articleDesc.text= recyclerItemText.descripcion
-            articlePrice.text = recyclerItemText.precio.toString()
+            articlePrice.text = "$${recyclerItemText.precio}"
 
             val imaging = recyclerItemText.imagen
 

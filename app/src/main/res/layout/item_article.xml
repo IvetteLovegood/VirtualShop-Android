@@ -36,17 +36,18 @@
 
                 <TextView
                         android:id="@+id/tv_nombre"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Nombre"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/colorPrimary"/>
 
                 <TextView
                         android:id="@+id/tv_descripcion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="166dp"
+                        android:layout_height="37dp"
                         android:text="Description"
-                        android:textSize="16sp" />
+                        android:textSize="8sp"/>
 
             </LinearLayout>
 
@@ -64,8 +65,8 @@
                         android:id="@+id/tv_precio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$680.00"
-                        android:textSize="18sp" />
+                        android:text="precio"
+                        android:textSize="18sp"/>
 
             </LinearLayout>
         </GridLayout>
