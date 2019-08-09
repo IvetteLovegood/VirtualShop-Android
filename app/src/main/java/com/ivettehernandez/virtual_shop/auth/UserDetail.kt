@@ -10,14 +10,7 @@ import android.view.ViewGroup
 import com.ivettehernandez.virtual_shop.R
 import com.google.android.gms.plus.PlusOneButton
 
-/**
- * A fragment with a Google +1 button.
- * Activities that contain this fragment must implement the
- * [UserDetail.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [UserDetail.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class UserDetail : Fragment() {
 
     private var mListener: OnFragmentInteractionListener? = null
@@ -39,7 +32,6 @@ class UserDetail : Fragment() {
 
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         if (mListener != null) {
             mListener!!.onFragmentInteraction(uri)
@@ -51,7 +43,6 @@ class UserDetail : Fragment() {
         if (context is OnFragmentInteractionListener) {
             mListener = context
         } else {
-         //   throw RuntimeException(context!!.toString() + " must implement OnFragmentInteractionListener")
         }
     }
 

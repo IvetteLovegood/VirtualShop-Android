@@ -31,6 +31,7 @@ import org.json.JSONObject
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.ivettehernandez.virtual_shop.article.ArticleList
 import com.ivettehernandez.virtual_shop.utils.Utils
 import com.ivettehernandez.virtual_shop.utils.Utils.user
 import org.json.JSONArray
@@ -61,7 +62,7 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val fragment = UserDetail()
+        val fragment = ArticleList()
         supportFragmentManager.popBackStack(BACK_STACK_ROOT_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE)
        supportFragmentManager.beginTransaction().addToBackStack(BACK_STACK_ROOT_TAG).replace(R.id.content_drawer, fragment).commit()
 
@@ -83,7 +84,6 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val queue = Volley.newRequestQueue(this)
         val url_user = user + Utils._id
 
-        Log.e("url_user", url_user)
         val preferences = PreferenceManager.getDefaultSharedPreferences(this@DrawerActivity)
         val token_user = preferences.getString("token", "")
 

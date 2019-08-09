@@ -9,6 +9,7 @@ data class Article (
     val _id: String,
     val nombre:String,
     val imagen:String,
-    val descripcion:String
+    val descripcion:String,
+    val precio: Int
 
 )

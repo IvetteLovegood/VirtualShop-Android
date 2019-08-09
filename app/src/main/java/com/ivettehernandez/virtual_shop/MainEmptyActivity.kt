@@ -23,8 +23,6 @@ class MainEmptyActivity : AppCompatActivity() {
 
         val token_user = preferences.getString("token", "")
 
-        Log.e("TOKENEEE", token_user)
-
         Utils.token = token_user
 
          val activityIntent: Intent = when {
