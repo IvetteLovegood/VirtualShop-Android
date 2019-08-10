@@ -111,7 +111,6 @@ class UserDetail : AppCompatActivity() {
         val preferences = PreferenceManager.getDefaultSharedPreferences(this@UserDetail)
         val token_user = preferences.getString("token", "")
 
-
         val getRequest = @SuppressLint("CommitPrefEdits")
         object : StringRequest(
             Method.GET, url,

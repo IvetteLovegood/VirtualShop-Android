@@ -61,7 +61,7 @@ class UserModify: AppCompatActivity() {
 
         val postRequest = @SuppressLint("CommitPrefEdits")
         object : StringRequest(
-            Method.POST, url,
+            Method.PUT, url,
             Response.Listener { response ->
                 Log.d("Response", response)
 
