@@ -19,6 +19,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.ivettehernandez.virtual_shop.R
 import com.ivettehernandez.virtual_shop.article.ArticleList
+import com.ivettehernandez.virtual_shop.article.ArticleModify
 import com.ivettehernandez.virtual_shop.auth.LoginActivity
 import com.ivettehernandez.virtual_shop.utils.Utils
 import kotlinx.android.synthetic.main.article_detail.*
@@ -29,11 +30,21 @@ import org.json.JSONObject
 @Suppress("DEPRECATION")
 class UserDetail : AppCompatActivity() {
 
+    lateinit var userId: String
+    lateinit var userEmail: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_user_detail)
 
         getDetail()
+
+        button_modify_user.setOnClickListener {
+            val intent = Intent(this, UserModify::class.java)
+            intent.putExtra("userId", userId)
+            intent.putExtra("userEmail", userEmail)
+            startActivity(intent)
+        }
 
         button_delete_user.setOnClickListener {
             val queue = Volley.newRequestQueue(this)
@@ -78,15 +89,6 @@ class UserDetail : AppCompatActivity() {
         }
 
 
-        button_modify_user.setOnClickListener {
-            Log.e("hdwedweoli", "holi")
-
-        }
-
-
-
-
-
     }
 
     private fun emptyPreferences() {
@@ -118,7 +120,11 @@ class UserDetail : AppCompatActivity() {
                 if (!response.isEmpty()) {
 
                     val jsonObject = JSONObject(response)
+
+                    Log.e("jsonObject", jsonObject.toString())
                     val userObject = jsonObject.getJSONObject("user")
+                    userId = userObject.getString("_id")
+                    userEmail = userObject.getString("email")
 
                     tv_email_description.text = userObject.getString("email")
 
@@ -143,6 +149,9 @@ class UserDetail : AppCompatActivity() {
 
     fun showToast(message: String) = Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
 
 }

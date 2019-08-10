@@ -25,6 +25,18 @@
         </menu>
     </item>
 
+
+    <item android:title="@string/order">
+        <menu>
+            <item
+                    android:id="@+id/nav_order_list"
+                    android:icon="@drawable/ic_view_list_black_24dp"
+                    android:title="@string/order"/>
+
+        </menu>
+    </item>
+
+
     <item android:title="@string/session">
         <menu>
             <item

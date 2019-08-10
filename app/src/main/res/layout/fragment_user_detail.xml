@@ -36,21 +36,8 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-        <Button
-                android:text="@string/modify_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_modify_user"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                tools:ignore="UnusedAttribute"/>
 
         <Button
                 android:text="@string/delete_profile"
@@ -63,6 +50,19 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
                 android:backgroundTint="@color/colorAccent"
+                tools:ignore="UnusedAttribute"/>
+
+        <Button
+                android:text="@string/modify_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_modify_user"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/colorPrimary"
                 tools:ignore="UnusedAttribute"/>
     </LinearLayout>
 
