@@ -73,9 +73,7 @@ class UserModify: AppCompatActivity() {
                     showToast(message)
 
                     finish()
-
                 }
-
             },
             Response.ErrorListener { response ->
                 // error
